@@ -1,0 +1,61 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.digitalinnovationone'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.5.3'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.3'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+	implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.5.3'
+
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
+	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.4'//Faz o repasse entre json e java object
+
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'//caso queiramos trocar o h2 pelo mysql
+
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'//Aumenta eficiencia na hora de escrever o codigo
+	annotationProcessor 'org.projectlombok:lombok'
+
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'//Faz a documentação da nossa API
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+	// https://mvnrepository.com/artifact/io.springfox/springfox-bean-validators
+	implementation group: 'io.springfox', name: 'springfox-bean-validators', version: '3.0.0'
+
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-envers
+	implementation group: 'org.hibernate', name: 'hibernate-envers', version: '5.5.6.Final'//Faz  uma auditoria no codigo
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+	implementation group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.1.Final'
+
+	implementation 'com.h2database:h2'
+	// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+
+
+
+
+}
+
+test {
+	useJUnitPlatform()
+}
